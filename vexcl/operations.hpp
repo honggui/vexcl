@@ -1880,7 +1880,7 @@ void assign_expression(LHS &lhs, const RHS &rhs,
             source.close("}").end_kernel();
 
             kernel = cache.insert(queue[d], backend::kernel(
-                        queue[d], source.str(), "vexcl_vector_kernel"));
+                        queue[d], source.sources(), "vexcl_vector_kernel"));
         }
 
         if (size_t psize = part[d + 1] - part[d]) {
@@ -2157,7 +2157,7 @@ void assign_multiexpression( LHS &lhs, const RHS &rhs,
             source.close("}").end_kernel();
 
             kernel = cache.insert(queue[d], backend::kernel(
-                        queue[d], source.str(), "vexcl_multivector_kernel") );
+                        queue[d], source.sources(), "vexcl_multivector_kernel") );
         }
 
         if (size_t psize = part[d + 1] - part[d]) {

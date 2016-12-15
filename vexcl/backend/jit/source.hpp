@@ -356,7 +356,7 @@ class source_generator {
             return *this;
         }
 
-        std::string str() const {
+        std::string sources() const {
             return src.str();
         }
 
